@@ -4,8 +4,6 @@ ARG plugins="fluent-plugin-systemd fluent-plugin-newrelic"
 # Use root account to use apt
 USER root
 
-# below RUN includes plugin as examples elasticsearch is not required
-# you may customize including plugins as you wish
 RUN buildDeps="sudo make gcc g++ libc-dev" \
  && apt-get update \
  && apt-get upgrade -y \
