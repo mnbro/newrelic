@@ -8,6 +8,7 @@ USER root
 # you may customize including plugins as you wish
 RUN buildDeps="sudo make gcc g++ libc-dev" \
  && apt-get update \
+ && apt-get upgrade -y \
  && apt-get install -y --no-install-recommends $buildDeps \
  && sudo gem install $plugins \
  && sudo gem sources --clear-all \
