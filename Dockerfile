@@ -1,7 +1,7 @@
 FROM fluent/fluentd:v1.14-debian-1
 
 ARG plugins="fluent-plugin-systemd fluent-plugin-newrelic"
-# Use root account to use apt
+#Use root account to use apt
 USER root
 
 RUN buildDeps="sudo make gcc g++ libc-dev" \
