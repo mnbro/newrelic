@@ -1,10 +1,5 @@
 name: Docker
 
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
 on:
   schedule:
     - cron: '45 0 * * 6'
@@ -67,5 +62,6 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
+          platform: linux/amd64,linux/arm64
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
